@@ -19,13 +19,13 @@
 
         <TextView
             android:id="@+id/cardViewText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="141dp"
+            android:layout_height="68dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="26dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="27dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="4dp"
             android:text="Game title"
             android:textSize="28dp"
             android:textStyle="bold" />

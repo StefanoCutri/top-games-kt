@@ -22,7 +22,7 @@ class GameAdapter(val gameList: ArrayList<GameModel>) :
             itemView.setOnClickListener() {
                 Toast.makeText(
                     itemView.context,
-                    "${gameList[adapterPosition].titleCard} vaccine",
+                    "${gameList[adapterPosition].titleCard}",
                     Toast.LENGTH_SHORT
                 ).show()
             }

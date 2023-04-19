@@ -34,6 +34,17 @@ class MainActivity : AppCompatActivity() {
             val g4 = GameModel(R.drawable.card4, "Hooked on You")
             val g5 = GameModel(R.drawable.card5, "FIFA 2022")
             val g6 = GameModel(R.drawable.card6, "Fortnite")
+
+            gamesList.add(g1)
+            gamesList.add(g2)
+            gamesList.add(g3)
+            gamesList.add(g4)
+            gamesList.add(g5)
+            gamesList.add(g6)
+
+            //Adapter
+            val adapter = GameAdapter(gamesList)
+            recyclerView.adapter = adapter
         }
     }
 }
