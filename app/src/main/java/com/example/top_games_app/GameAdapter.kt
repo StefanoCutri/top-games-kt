@@ -8,18 +8,23 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class GameAdapter(val gameList: ArrayList<GameModel>): RecyclerView.Adapter<GameAdapter.MyViewHolder>(){
+class GameAdapter(val gameList: ArrayList<GameModel>) :
+    RecyclerView.Adapter<GameAdapter.MyViewHolder>() {
 
-    inner class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         lateinit var gameImage: ImageView
         lateinit var gameTitle: TextView
 
         init {
             gameTitle = itemView.findViewById(R.id.cardViewText)
-            gameImage= itemView.findViewById(R.id.cardViewImage)
+            gameImage = itemView.findViewById(R.id.cardViewImage)
 
-            itemView.setOnClickListener(){
-                Toast.makeText(itemView.context, "${gameList[adapterPosition].titleCard} vaccine", Toast.LENGTH_SHORT).show()
+            itemView.setOnClickListener() {
+                Toast.makeText(
+                    itemView.context,
+                    "${gameList[adapterPosition].titleCard} vaccine",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
@@ -27,11 +32,11 @@ class GameAdapter(val gameList: ArrayList<GameModel>): RecyclerView.Adapter<Game
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val v = LayoutInflater.from(parent.context)
             .inflate(R.layout.card_item, parent, false)
-        return  MyViewHolder(v)
+        return MyViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-       holder.gameTitle.text = gameList[position].titleCard
+        holder.gameTitle.text = gameList[position].titleCard
         holder.gameImage.setImageResource(gameList[position].imgCard)
     }
 
@@ -39,7 +44,6 @@ class GameAdapter(val gameList: ArrayList<GameModel>): RecyclerView.Adapter<Game
     override fun getItemCount(): Int {
         return gameList.size
     }
-
 
 
 }
